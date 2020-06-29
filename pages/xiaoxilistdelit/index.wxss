@@ -1,0 +1,18 @@
+/* pages/xiaoxilistdelit/index.wxss */
+.title{
+  font-size: 34rpx;
+  padding: 20rpx;
+  text-align: center;
+}
+.titles{
+  font-size: 32rpx;
+  padding: 10rpx;
+  text-align: center;
+  color: gray;
+}
+.txt11{
+  font-size: 32rpx;
+  padding: 20rpx; 
+  text-align: center;
+  overflow: hidden;
+}

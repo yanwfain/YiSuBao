@@ -1,0 +1,149 @@
+<view class="Shouquan" wx:if="{{!nickName}}">
+  <view class="titless">
+    提示 ！
+  </view>
+  <view class="cont_tltsops">
+    您还未授权请先授权！
+  </view>
+  <view class="btn_button">
+    <view class="quxiao_btn" bindtap="ggopfn">
+      取消
+    </view>
+    <button class="butn_bottys" open-type="getUserInfo" bindgetuserinfo="getUserInfo">去授权 </button>
+  </view>
+</view>
+<view class="opsbjc" wx:if="{{!nickName}}" bindtap="ggopfn"></view>
+
+<view class="top_img">
+  <view class="user" bindtap="userFn" wx:if="{{list.is_approval_name=='待认证'}}">
+    <image class="user_img" src="{{list.head_img?list.head_img:list.head_img}}"></image>
+    <view class="user_delit">
+      <view class="user_name">{{list.name}}</view>
+      <view class="cont_usercont">
+        <view class="cont_userdv1" wx:if="{{list.level==1||list.level==2||list.level==3}}">{{list.level_name}}</view>
+        <view class="cont_userdv2" >{{list.is_approval_name}}</view>
+        <!-- <view class="cont_userdv1" wx:if="{{list.level==0}}">未认证</view> -->
+      </view>
+    </view>
+     <image class="img_1s" catchtap="listFkn" src="../../image/xiaoxi.png"></image>
+     <view class="tdti" wx:if="{{menber.sms==1}}"></view>     
+  </view>
+   <view class="user"  wx:if="{{list.is_approval_name=='已认证'}}">
+    <image class="user_img" src="{{list.head_img?list.head_img:list.head_img}}"></image>
+    <view class="user_delit">
+      <view class="user_name">{{nickName}}</view>
+      <view class="cont_usercont">
+          <view class="cont_userdv1" wx:if="{{list.level==1||list.level==2||list.level==3}}">{{list.level_name}}</view>
+        <view class="cont_userdv2" >{{list.is_approval_name}}</view>
+      </view>
+    </view>
+     <image class="img_1s" catchtap="listFkn" src="../../image/xiaoxi.png"></image>
+     <view class="tdti" wx:if="{{menber.sms==1}}"></view>
+
+  </view>
+ 
+</view>
+<view class="dcont_dan">
+  <view class="titl_dan">
+    <view class="wtit">我的订单</view>
+    <view class="lookd" bindtap="ddantab">查看全部
+      <text class="txt_jt"></text>
+    </view>
+  </view>
+  <view class="cont_dv">
+    <view class="btn" data-id="1" bindtap="clickFn">
+      <image src="http://zsb.baike360.cn/public/image/dtj.png"></image>
+      <view class="txt_bot">待提交</view>
+    </view>
+    <view class="btn" data-id="2" bindtap="clickFn">
+      <image  style="width:72rpx" src="http://zsb.baike360.cn/public/image/dkf.png"></image>
+      <view class="txt_bot">待付款</view>
+    </view>
+    <view class="btn" data-id="3" bindtap="clickFn">
+      <image style="width:82rpx" src="http://zsb.baike360.cn/public/image/dsh.png"></image>
+      <view class="txt_bot">待审核</view>
+    </view>
+    <view class="btn" data-id="4" bindtap="clickFn">
+      <image style="" src="http://zsb.baike360.cn/public/image/ytj.png"></image>
+      <view class="txt_bot">已提交</view>
+    </view>
+    <view class="btn" data-id="5" bindtap="clickFn">
+      <image style="" src="http://zsb.baike360.cn/public/image/ywc.png"></image>
+      <view class="txt_bot">已完成</view>
+    </view>
+  </view>
+</view>
+<view class="list_cont" bindtap="zjh" style="margin-top:50rpx;">
+  <view class="left_tit">证件号码</view>
+  <view class="right_tit">
+    <view class="delit">
+      <text class="txt1">{{list.id_num?list.id_num:'未填写'}}</text>
+      <text class="txt_jt"></text>
+    </view>
+  </view>
+</view>
+<view class="list_cont" bindtap="shoujih">
+  <view class="left_tit">手机号码</view>
+  <view class="right_tit">
+    <view class="delit">
+      <text class="txt1"> {{list.mobile?list.mobile:'未填写'}}</text>
+      <text class="txt_jt"></text>
+    </view>
+  </view>
+</view>
+<view class="list_cont" bindtap="youx">
+  <view class="left_tit">电子邮箱</view>
+  <view class="right_tit">
+    <view class="delit">
+      <text class="txt1"> {{list.email?list.email:'未填写'}}</text>
+      <text class="txt_jt"></text>
+    </view>
+  </view>
+</view>
+<!-- <view class="list_cont" >
+  <view class="left_tit">收货地址</view>
+  <view class="right_tit">
+    <view class="delit"> <text class="txt1"> 北京市西城区哈哈香楼房 河畔单元 5号楼2506</text>
+      <text class="txt_jt"></text>
+    </view>
+  </view>
+</view> -->
+<view class="cont_lushi" wx:if="{{list.level==2&&list.is_approval==2||list.level==3}}">
+  <view class="titl_lushi">
+    我的客户
+  </view>
+  <view class="cont_lushidv">
+    <view class="tab_lushi" bindtap="jifenFn">
+      <image src="http://zsb.baike360.cn/public/image/jifen.png"></image>
+      <view class="txt_lushi">我的积分</view>
+    </view>
+    <view class="tab_lushi" bindtap="tixianFn">
+      <image src="http://zsb.baike360.cn/public/image/tixian.png"></image>
+      <view class="txt_lushi">兑换记录</view>
+    </view>
+    <view class="tab_lushi" bindtap="imgFn">
+      <image src="http://zsb.baike360.cn/public/image/er1.png"></image>
+      <view class="txt_lushi">二维码</view>
+    </view>
+    <view class="tab_lushi" bindtap="yapqing">
+      <image src="http://zsb.baike360.cn/public/image/yq.png"></image>
+      <view class="txt_lushi">我的邀请</view>
+    </view>
+    <view class="tab_lushi" bindtap="kehuddDn">
+      <image src="http://zsb.baike360.cn/public/image/dd.png"></image>
+      <view class="txt_lushi">客户订单</view>
+    </view>
+    <view class="tab_lushi" bindtap="yhkFn">
+      <image src="http://zsb.baike360.cn/public/image/yhk.png"></image>
+      <view class="txt_lushi">银行卡</view>
+    </view>
+  </view>
+</view>
+<!-- <view class="fied_log" bindtap="openshow">
+  <image src="../../image/kefu.png"></image>
+</view>
+<view class="opsticy" bindtap="falFn" wx:if="{{isshowModel}}"></view>
+<view class="div-tablefu" wx:if="{{isshowModel}}">
+  <view class="bodda" bindtap="open">拨打电话</view>
+  <button class="kefu_btn" open-type='contact' session-from='' style="background: #0582FC">联系客服</button>
+</view> -->

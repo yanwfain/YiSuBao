@@ -1,0 +1,25 @@
+<view class="cont-top">
+  <view class="cont1">申请编号:{{order_sn}}</view>
+  <view class="cont2">{{listIarry.sq_baoxian}}{{insurance_company_name}}</view>
+  <view class="bot">{{listIarry.zf_xiaoji}}{{warrant_money}}</view>
+</view>
+<view class="title">{{zf_qiye}}</view>
+<view class="cont-1">
+  <view class="left-txt">{{listIarry.zf_kahao}}</view>
+  <input class="inp1" placeholder="{{listIarry.zf_kahao}}" disabled bindinput="inp1" value="{{list.bank_num}}"></input>
+</view>
+<view class="cont-1">
+  <view class="left-txt">{{listIarry.zf_kaika}}</view>
+  <input class="inp1" placeholder="{{listIarry.zf_kaika}}" disabled bindinput="inp2" value="{{list.bank_name}}"></input>
+</view>
+<view class="cont-1">
+  <view class="left-txt">{{listIarry.zf_kaikaname}}</view>
+  <input class="inp1" placeholder="{{listIarry.zf_kaikaname}}" bindinput="inp3" value="{{list.pay_name}}"></input>
+</view>
+<view class="title">{{listIarry.zf_shoukuan}}</view>
+<view class="pick-img">
+  <image src="{{list.alipay_image}}"></image>
+  <image src="{{list.wechat_image}}"></image>
+</view>
+<view style="width:100%;height:100rpx;"></view>
+<view class="subpicker" bindtap="submit">{{listIarry.zf_botbtn}}</view>

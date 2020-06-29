@@ -1,0 +1,53 @@
+/* pages/qibao/index.wxss */
+page{
+  background: #F9F9F9;
+}
+.cont{
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #ccc;
+  background: white;
+  align-items: center;
+}
+.left{
+  
+}
+.right{
+  width: 60%;
+  font-size: 28rpx;
+  text-align: right;
+
+}
+.picker-area-text{
+  justify-content: flex-end	;
+  align-items: center;
+  display: flex;
+}
+.txt_jt {
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  transform: rotate(45deg);
+}
+.btn{
+  width: 300rpx;
+  border-radius: 40rpx;
+  background: #0582FC;
+  color: white;
+  text-align: center;
+  line-height: 80rpx;
+  height: 80rpx;margin: 0 auto;
+  margin-top:150rpx;
+}
+.btn{
+  width: 300rpx;
+  border-radius: 40rpx;
+  background: #0582FC;
+  color: white;
+  text-align: center;
+  line-height: 80rpx;
+  height: 80rpx;margin: 0 auto;
+  margin-top:150rpx;
+}

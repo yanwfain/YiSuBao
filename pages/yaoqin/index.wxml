@@ -1,0 +1,17 @@
+<view class="tab">
+  <view class="tablei {{tid==1?'active':''}}" data-id="1" bindtap="tabFn">
+    一级
+  </view>
+    <view class="tablei {{tid==2?'active':''}}" data-id="2" bindtap="tabFn">
+    二级
+  </view>
+</view>
+
+<view class="list" wx:for="{{movieList}}"  wx:key="index">
+  <view class="left_list">
+    <image class="img_1" src="{{item.head_img}}"></image>
+    <view class="user_gos">{{item.nickname}}</view>
+  </view>
+  <view class="right_list">{{item.createtime}}</view>
+</view>
+<view style="text-align:center;padding:20rpx;coor:gray;font-size:28rpx;" wx:if="{{movieList.length<1}}">暂时没有更多数据了</view>

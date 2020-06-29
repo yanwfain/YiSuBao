@@ -1,0 +1,13 @@
+<view class="jifen">
+  <view class="numjifen">{{current_score?current_score:'0'}}</view>
+  <view class="txt">该积分永久有效</view>
+</view>
+<view class="tixian" bindtap="submit">积分兑换</view>
+<view class="list" wx:for="{{movieList}}" wx:key="index">
+  <view class="left_t">
+    <view class="tit">积分兑换</view>
+    <view class="time">{{item.createtime}}</view>
+  </view>
+  <view class="nums">{{item.score}}积分</view>
+  <view class="numss" style="color:green">{{item.status}}</view>
+</view>

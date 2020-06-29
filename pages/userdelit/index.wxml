@@ -1,0 +1,78 @@
+<view class="yhk">
+  <view class="list">
+    <view class="left">身份类型</view>
+    <view class="right">
+      <picker bindchange="pickerProChangef" range="{{ pickerProDataf }}" range-key="{{'name'}}" value="{{countryIndex}}">
+        <view class="picker-area-text" style="">
+          {{pickerProDataf[countryIndex].name?pickerProDataf[countryIndex].name:"请选择"}}
+          <view class="txt_jt"></view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="list">
+    <view class="left">姓名</view>
+    <input class="right" placeholder="请输入姓名" bindinput="realname" value="{{realname}}"></input>
+  </view>
+  <view class="list">
+    <view class="left">证件类型</view>
+    <view class="right">
+      <picker bindchange="pickerProChangef1" range="{{ pickerProDataf1 }}" range-key="{{'name'}}" value="{{countryIndex1}}">
+        <view class="picker-area-text" style="">
+          {{pickerProDataf1[countryIndex1].name?pickerProDataf1[countryIndex1].name:"请选择"}}
+          <view class="txt_jt"></view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="list">
+    <view class="left">证件号码</view>
+    <input class="right" placeholder="请输入证件号码" bindinput="id_num" value="{{id_num}}"></input>
+  </view>
+   <view class="list">
+    <view class="left">电子邮箱</view>
+    <input class="right" placeholder="请输入电子邮箱" bindinput="email" value="{{email}}"></input>
+  </view>
+  <!-- <view class="list">
+    <view class="left">收货地址</view>
+    <view class="right" bindtap="wxaddress">{{address_delit?address_delit:'选择收货地址'}}</view>
+  </view> -->
+  <view class="list" wx:if="{{countryIndex==2}}">
+    <view class="left">律师证号</view>
+    <input class="right" bindinput="lawyer_num" placeholder="请输入律师证号" value="{{lawyer_num}}"></input>
+  </view>
+    <view class="list" wx:if="{{countryIndex==2}}">
+    <view class="left">律所名称</view>
+    <input class="right" bindinput="lawyer" placeholder="请输入律所名称" value="{{lawyer}}"></input>
+  </view>
+  <view class="list">
+    <view class="left">手机号码</view>
+    <input class="right" type="number"  placeholder="请输入手机号码" bindinput="mobile" value="{{mobile}}"></input>
+    <button class="huoqu" disabled="{{buttonDisable}}" bindtap="butn">{{buttonDisable === true?verifyCodeTime:'获取验证码'}}</button>
+  </view>
+  <view class="list">
+    <view class="left">验证码</view>
+    <input class="right" type="number" bindinput="code" placeholder="请输入验证码" value="{{code}}"></input>
+  </view>
+  <block wx:if="{{countryIndex==2}}">
+    <view class="titl_an">上传个人照片</view>
+    <view class='pages'>
+      <!-- 图片 -->
+      <view class="images_box">
+        <block wx:key="imgbox" wx:for="{{imgbox}}">
+          <view class='img-box'>
+            <image class='img' src='{{item}}'></image>
+            <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete1'>
+              <image class='img' src='http://zsb.baike360.cn/public/image/dele.png'></image>
+            </view>
+          </view>
+        </block>
+        <view class='img-box' bindtap='addPic1' wx:if="{{imgbox.length==0}}">
+          <image class='img' src='http://zsb.baike360.cn/public/image/tupian.png'></image>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class="submit" bindtap="tijiao">保存</view>
+</view>

@@ -1,0 +1,84 @@
+<view class="cont" style='margin-top:20rpx;'>
+  <view class="left">被保险人类型</view>
+  <view class="right" >
+    <picker bindchange="pickerProChangef" range="{{ pickerProDataf }}" range-key="{{'name'}}" value="{{countryIndex}}">
+      <view class="picker-area-text" style="">
+        {{pickerProDataf[countryIndex].name?pickerProDataf[countryIndex].name:"请选择类型"}}
+        <view class="txt_jt"></view>
+      </view>
+    </picker>
+  </view>
+</view>
+<view class="cont">
+  <view class="left">财产价值</view>
+  <input class="right" type="digit" placeholder="请填财产价值" bindinput="property_value" value="{{property_value}}"></input>
+</view>
+<view class="cont" wx:if="{{pickerProDataf[countryIndex].text.land_authority}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.land_authority}}</view>
+  <input class="right" type="digit" placeholder="请输入" bindinput="land_authority" value="{{land_authority}}"></input>
+</view>
+<!-- <view class="cont" wx:if="{{pickerProDataf[countryIndex].text.land_authority}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.land_authority}}</view>
+  <input class="right" type="digit" placeholder="" bindinput="land_authority" value="{{land_authority}}"></input>
+</view> -->
+<view class="cont" style="align-items:flex-start ;" wx:if="{{pickerProDataf[countryIndex].text.property_note}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.property_note}}</view>
+  <textarea class="right" maxlength='999' style="text-align:left;" placeholder="" bindinput="property_note" value="{{property_note}}"></textarea>
+</view>
+<view class="cont" wx:if="{{pickerProDataf[countryIndex].text.open_bank}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.open_bank}}</view>
+  <input class="right"  placeholder="请输入" bindinput="open_bank" value="{{open_bank}}"></input>
+</view>
+<view class="cont" wx:if="{{pickerProDataf[countryIndex].text.bank_num}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.bank_num}}</view>
+  <input class="right"  placeholder="请输入" bindinput="bank_num" value="{{bank_num}}"></input>
+</view>
+
+<view class="cont" wx:if="{{pickerProDataf[countryIndex].text.land_type}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.land_type}}</view>
+  <view class="right" >
+    <picker bindchange="land_type" range="{{ pickerProDataf[countryIndex].text.type }}" range-key="{{index}}" value="{{countryIndex1}}">
+      <view class="picker-area-text" style="">
+        {{pickerProDataf[countryIndex].text.type[countryIndex1]?pickerProDataf[countryIndex].text.type[countryIndex1]:"请选择"}}
+        <view class="txt_jt"></view>
+      </view>
+    </picker>
+  </view>
+</view>
+<view class="cont" wx:if="{{pickerProDataf[countryIndex].text.land_name}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.land_name}}</view>
+  <input class="right"  placeholder="请输入" bindinput="land_name" value="{{land_name}}"></input>
+</view>
+<view class="cont" wx:if="{{pickerProDataf[countryIndex].text.num}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.num}}</view>
+  <input class="right"  placeholder="请输入" bindinput="num" value="{{num}}"></input>
+</view>
+<view class="cont" wx:if="{{pickerProDataf[countryIndex].text.land_address}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.land_address}}</view>
+  <input class="right"  placeholder="请输入" bindinput="land_address" value="{{land_address}}"></input>
+</view>
+<view class="cont" wx:if="{{pickerProDataf[countryIndex].text.land_num}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.land_num}}</view>
+  <input class="right"  placeholder="请输入" bindinput="land_num" value="{{land_num}}"></input>
+</view>
+<view class="cont" wx:if="{{pickerProDataf[countryIndex].text.car_num}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.car_num}}</view>
+  <input class="right"  placeholder="请输入" bindinput="car_num" value="{{car_num}}"></input>
+</view>
+<view class="cont" wx:if="{{pickerProDataf[countryIndex].text.bonds_name}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.bonds_name}}</view>
+  <input class="right"  placeholder="请输入" bindinput="bonds_name" value="{{bonds_name}}"></input>
+</view>
+
+<view class="cont" wx:if="{{pickerProDataf[countryIndex].text.company}}">
+  <view class="left">{{pickerProDataf[countryIndex].text.company}}</view>
+  <input class="right"  placeholder="请输入" bindinput="company" value="{{company}}"></input>
+</view>
+
+
+<view class="btn" bindtap="submit" wx:if="{{!isshow}}">
+  提交
+</view>
+<view class="btn" bindtap="submits" wx:if="{{isshow}}">
+  修改
+</view>

@@ -1,0 +1,126 @@
+<view class="top_view">
+    <view class="title">{{listIarry.jx_bdtoptitle}}
+    </view>
+    <view class="bot_view">
+      <image src="{{insurance_company_image}}" class="left"></image>
+      <view class="right">{{insurance_company_name}}</view>
+    </view>
+  </view>
+  <view class="cont-list bg1">
+
+  <view class="titl_an">{{listIarry.sq_anjian}}
+    <text style="color:#FF0000;font-size:26rpx;">{{listIarry.sq_kejian}}</text> </view>
+  <view class="list-txtinp" bindtap="cityFn">
+    <view class="left-tit"><text style="color:red;">*</text> {{listIarry.jx_bdshouli}}</view>
+    <view class="inp1">{{settitle?settitle:'请选择'}}</view>
+  </view>
+  <view class="list-txtinp">
+    <view class="left-tit"><text style="color:red;">*</text> {{listIarry.danbao}}</view>
+    <input class="inp1" type="digit" placeholder="请填{{listIarry.danbao}}" bindinput="warrant_price" value="{{warrant_price}}"></input>
+  </view>
+
+    <view class="list-txtinp">
+    <view class="left-tit">{{listIarry.jx_bdyugu}}</view>
+    <input class="inp1"  disabled placeholder="请填写{{listIarry.jx_bdyugu}}" value="{{warrant_money}}"></input>
+  </view>
+    <view class="list-txtinp">
+    <view class="left-tit">{{listIarry.sq_anhao}}</view>
+    <input class="inp1" placeholder="请填写{{listIarry.sq_anhao}}" bindinput="case_num" value="{{case_num}}"></input>
+  </view>
+  <view class="list-txtinp">
+    <view class="left-tit">{{listIarry.sq_lvshiname}}</view>
+    <input class="inp1" placeholder="请填写{{listIarry.sq_lvshiname}}" bindinput="lawyer_name" value="{{lawyer_name}}"></input>
+  </view>
+  <view class="list-txtinp">
+    <view class="left-tit">{{listIarry.sq_lvshitel}}</view>
+    <input class="inp1" placeholder="请填写{{listIarry.sq_lvshitel}}" type="number"  bindinput="lawyer_mobile" value="{{lawyer_mobile}}"></input>
+  </view>
+</view>
+<view class="cont-list bg2">
+  <view class="titl_an"><text style="color:red;">*</text> {{listIarry.sq_toubao}}</view>
+  <view class="cont_userlist" wx:if="{{isbtn==1}}" wx:for="{{listcnt.policy}}" wx:key="index" data-index="{{index}}" data-name="{{item.name}}" data-id_num="{{item.id_num}}" data-num_type="{{item.num_type}}" data-id="{{item.id}}" data-status="{{item.status}}"
+    data-company_name="{{item.company_name}}">
+    <view class="user-name">{{item.name}}</view>
+    <view class="list-xinxi">
+      <view class="left-ltit" wx:if="{{item.status==1}}">自然人</view>
+      <view class="left-ltit" wx:if="{{item.status==2}}">法人</view>
+      <view class="left-ltit" wx:if="{{item.status==3}}">非法人组织</view>
+      <view class="user-name">{{item.id_num}}</view>
+    </view>
+  </view>
+  <view class="cont_userlist" bindtap="tibaoFns" wx:if="{{isbtn!=1||!isbtn}}" wx:for="{{listcnt.policy}}" wx:key="index" data-index="{{index}}" data-name="{{item.name}}" data-id_num="{{item.id_num}}" data-num_type="{{item.num_type}}" data-id="{{item.id}}" data-status="{{item.status}}"
+    data-company_name="{{item.company_name}}">
+    <view class="txt_jt" style="color:gray; position: absolute; right:8rpx;top:20%;"></view>
+    <view class="user-name">{{item.name}}</view>
+    <view class="list-xinxi">
+      <view class="left-ltit" wx:if="{{item.status==1}}">自然人</view>
+      <view class="left-ltit" wx:if="{{item.status==2}}">法人</view>
+      <view class="left-ltit" wx:if="{{item.status==3}}">非法人组织</view>
+      <view class="user-name">{{item.id_num}}</view>
+    </view>
+  </view>
+  <view class="bot_view" bindtap="tibaoFn" wx:if="{{isbtn!=1||!isbtn}}">
+    <view class="icons">+</view>
+    <view class="bot-title">添加{{listIarry.sq_toubao}}</view>
+  </view>
+</view>
+<view class="cont-list bg1">
+  <view class="titl_an"><text style="color:red;">*</text> {{listIarry.sq_youji}}</view>
+  <block wx:if="{{isbtn==1}}">
+    <view class="cont_userlist" wx:if="{{recipients}}">
+      <view class="user-name">{{recipients}}</view>
+      <view class="user-name">{{recipients_mobile}}</view>
+      <view class="user-name">{{address}}</view>
+    </view>
+  </block>
+  <block wx:if="{{isbtn!=1||!isbtn}}">
+    <view class="cont_userlist" bindtap='wxaddress' wx:if="{{recipients}}">
+      <view class="txt_jt" style="color:gray; position: absolute; right:8rpx;top:20%;"></view>
+      <view class="user-name">{{recipients}}</view>
+      <view class="user-name">{{recipients_mobile}}</view>
+      <view class="user-name">{{address}}</view>
+    </view>
+  </block>
+  <view class="bot_view" wx:if="{{!recipients ||isbtn!=1}}">
+    <view class="icons">+</view>
+    <view class="bot-title" bindtap='wxaddress'>添加{{listIarry.sq_youji}}</view>
+  </view>
+</view>
+<view class="cont-list bg1">
+  <view class="titl_an">{{listIarry.jx_bdxiangguan}}  <text style="color:#FA9D02;font-size:26rpx;" bindtap="delitwenFn">{{listIarry.jx_bdxjzx}}</text></view>
+  <view class="cont_userlist" style="padding-bottom: 10rpx;">
+    <view class="user-name"><text style="color:red;">*</text> 01.登记邮箱</view>
+    <input class="inp_bot" bindinput="email" value="{{email}}" placeholder="请填写您的电子邮箱"></input>
+  </view>
+   <view class="cont_userlist" style="padding-bottom: 10rpx;">
+    <view class="user-name">02.发送{{listIarry.jx_cailiao}}</view>
+    <view class="inp_bot">发送{{listIarry.jx_cailiao}}至13810463997@163.com <text bindtap="copyFn" style="color:#0C60FF;margin-left:10rpx;">复制邮箱</text> </view>
+  </view>
+</view>
+<view class="rideo">
+  <radio-group bindchange="ycfp">
+    <view class="zhifu_box" bindtap="riods">
+      <radio bindtap="riods" checked="{{ridos === '1' ? 'true' : ''}}" value="1"></radio>
+      <view class="lefts">
+        <view>已阅读并同意 <text catchtap="delitwenFns" style="color:#0C60FF" catchtap="delitwenFn1">{{listIarry.jx_susong}}</text></view>
+      </view>
+    </view>
+  </radio-group>
+</view>
+<!-- <view class="fied_log" bindtap="openshow">
+  <image src="../../image/kefu.png"></image>
+</view> -->
+<view class="opsticy" bindtap="falFn" wx:if="{{isshowModel}}"></view>
+<view class="div-tablefu" wx:if="{{isshowModel}}">
+  <view class="bodda" bindtap="open">拨打电话</view>
+  <button class="kefu_btn" open-type='contact' session-from='' style="background: #0582FC">联系客服</button>
+</view>
+<!-- <button class="kefu_btn" open-type='contact' catchtap="kefull" session-from='' style="background: #0582FC">联系客服</button> -->
+<view class="kefu_btns" bindtap="openshow">联系客服</view>
+<view style="height:100rpx;"></view>
+<view class="fied" wx:if="{{isbtn!=1||!isbtn}}">
+  <view class="left_bot">
+    {{listIarry.jx_bottom1}}:{{warrant_money}}起
+  </view>
+  <view class="right_bot" bindtap="submit">{{listIarry.jx_bottom2}}</view>
+</view>

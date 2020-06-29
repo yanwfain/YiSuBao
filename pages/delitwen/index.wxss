@@ -1,0 +1,9 @@
+page{
+  background: #FAFAFA;
+
+}
+.txt{
+  margin: 20rpx ;
+  color: #666666;
+  font-size: 30rpx;
+}

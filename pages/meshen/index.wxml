@@ -1,0 +1,141 @@
+<block wx:for="{{movieList}}" wx:key="index">
+
+
+  <view class="cont" wx:if="{{item.order_type==1}}">
+    <view class="qux" wx:if="{{item.status!='已关闭'&&item.status!='后台关闭'}}" bindtap="deleFn" data-id="{{item.id}}">取消订单</view>
+
+    <view class="title">{{item.order_type_name}}</view>
+    <view class="tit_botom">
+      <view class="code_mun">申请编号:{{item.order_sn}}</view>
+      <view class="time"> {{item.createtime}}</view>
+    </view>
+    <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+    <view class="title_name" style="padding-top:20rpx">{{listIarry.sq_baoxian}}{{item.insurance_company}}</view>
+    <view class="title_name" style="padding-bottom:20rpx;">{{listIarry.sq_fayuan}}{{item.court}} </view>
+    <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+    <view class="cont-list">
+      <view class="list_l">
+        <view class="micker">{{item.warrant_price}}</view>
+        <view class="txt">{{listIarry.danbao}}</view>
+      </view>
+      <view class="list_l">
+        <view class="micker">{{item.warrant_money}}</view>
+        <view class="txt">{{listIarry.jx_danbao}}</view>
+      </view>
+      <view class="list_l">
+        <view class="micker">{{item.type}}</view>
+        <view class="txt">{{listIarry.biaodi}}</view>
+      </view>
+    </view>
+    <view class="bot">
+
+      <view class="left_bot_lt" data-tname="{{item.type}}" bindtap="baoquan" wx:if="{{item.status=='未提交'||item.status=='待审核'}}" data-id="{{item.id}}">编辑</view>
+
+      <view class="left_bot_lt" data-tname="{{item.type}}"  wx:else bindtap="baoquans" data-id="{{item.id}}">查看</view>
+      <view class="right_bot_lt" wx:if="{{item.status=='待付款'}}" data-order_sn="{{item.order_sn}}" data-insurance_company_id="{{item.insurance_company_id}}" data-insurance_company_name="{{item.insurance_company}}" data-warrant_money="{{item.warrant_money}}"
+        data-order_id="{{item.id}}" bindtap="bindfu">{{item.status}}</view>
+      <view class="right_bot_lt" wx:if="{{item.status!='待付款'}}">{{item.status}}</view>
+    </view>
+  </view>
+  <view class="cont" wx:if="{{item.order_type==2}}">
+    <view class="qux" wx:if="{{item.status!='已关闭'&&item.status!='后台关闭'}}" bindtap="deleFn" data-id="{{item.id}}">取消订单</view>
+
+    <view class="title">{{item.order_type_name}}</view>
+    <view class="tit_botom">
+      <view class="code_mun">申请编号:{{item.order_sn}}</view>
+      <view class="time">{{item.createtime}}</view>
+    </view>
+    <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+    <view class="title_name" style="padding-top:20rpx">{{listIarry.sq_baoxian}}{{item.insurance_company}}</view>
+    <view class="title_name" style="padding-bottom:20rpx;">{{listIarry.sq_fayuan}}{{item.court}} </view>
+    <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+    <view class="cont-list">
+      <view class="list_l">
+        <view class="micker">{{item.warrant_price}}</view>
+        <view class="txt">{{listIarry.danbao}}</view>
+      </view>
+      <view class="list_l">
+        <view class="micker">{{item.warrant_money}}</view>
+        <view class="txt">{{listIarry.jx_danbao}}</view>
+      </view>
+    </view>
+    <view class="bot">
+
+      <view class="left_bot_lt" bindtap="jixuFn" wx:if="{{item.status=='未提交'}}" data-id="{{item.id}}">编辑</view>
+
+      <view class="left_bot_lt" wx:if="{{item.status!='未提交'}}" bindtap="jixuFns" data-id="{{item.id}}">查看</view>
+      <view class="right_bot_lt" wx:if="{{item.status=='待付款'}}" data-order_sn="{{item.order_sn}}" data-insurance_company_id="{{item.insurance_company_id}}" data-insurance_company_name="{{item.insurance_company}}" data-warrant_money="{{item.warrant_money}}"
+        data-order_id="{{item.id}}" bindtap="bindfu">{{item.status}}</view>
+      <view class="right_bot_lt" wx:if="{{item.status!='待付款'}}">{{item.status}}</view>
+    </view>
+  </view>
+</block>
+<view class="kong" wx:if="{{movieList.length<1}}">
+  暂时没有提交任何数据哦
+</view>
+<!-- <view class="cont">
+  <view class="title">财产保全险</view>
+  <view class="tit_botom">
+    <view class="code_mun">申请编号:123456789014</view>
+    <view class="time"> 2020-03-06 14:00</view>
+  </view>
+  <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+  <view class="title_name" style="padding-top:20rpx">保险公司：中国财产平安保险股份有限公司</view>
+  <view class="title_name" style="padding-bottom:20rpx;">人民法院：新疆生产建设兵团人民法院备份 </view>
+  <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+  <view class="cont-list">
+    <view class="list_l">
+      <view class="micker">5,000.00</view>
+      <view class="txt">担保金额</view>
+    </view>
+    <view class="list_l">
+      <view class="micker">5,000.00</view>
+      <view class="txt">担保费</view>
+    </view>
+    <view class="list_l">
+      <view class="micker">货币现金</view>
+      <view class="txt">标的类型</view>
+    </view>
+  </view>
+  <view class="bot">
+    <view class="left_bot_lt">查看</view>
+    <view class="right_bot_lt">审核中</view>
+  </view>
+</view>
+<view class="cont" >
+  <view class="title">继续执行</view>
+  <view class="tit_botom">
+    <view class="code_mun">申请编号:123456789014</view>
+    <view class="time"> 2020-03-06 14:00</view>
+  </view>
+  <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+  <view class="title_name" style="padding-top:20rpx">保险公司：中国财产平安保险股份有限公司</view>
+  <view class="title_name" style="padding-bottom:20rpx;">人民法院：新疆生产建设兵团人民法院备份 </view>
+  <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+  <view class="cont-list">
+    <view class="list_l">
+      <view class="micker">5,000.00</view>
+      <view class="txt">担保金额</view>
+    </view>
+    <view class="list_l">
+      <view class="micker">5,000.00</view>
+      <view class="txt">担保费</view>
+    </view>
+    <view class="list_l">
+      <view class="micker">货币现金</view>
+      <view class="txt">标的类型</view>
+    </view>
+  </view>
+  <view class="bot">
+    <view class="left_bot_lt" bindtap="jixuFn">查看</view>
+    <view class="right_bot_lt">审核中</view>
+  </view>
+</view> -->
+<!-- <view class="fied_log" bindtap="openshow">
+  <image src="../../image/kefu.png"></image>
+</view> -->
+<view class="opsticy" bindtap="falFn" wx:if="{{isshowModel}}"></view>
+<view class="div-tablefu" wx:if="{{isshowModel}}">
+  <view class="bodda" bindtap="open">拨打电话</view>
+  <button class="kefu_btn" open-type='contact' session-from='' style="background: #0582FC">联系客服</button>
+</view>

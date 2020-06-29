@@ -1,0 +1,10 @@
+ <view class="list">
+    <view class="left">手机号码</view>
+    <input class="right" type="number" placeholder="请输入手机号码" bindinput="mobile" value="{{mobile}}"></input>
+    <button class="huoqu" disabled="{{buttonDisable}}" bindtap="butn">{{buttonDisable === true?verifyCodeTime:'获取验证码'}}</button>
+  </view>
+  <view class="list">
+    <view class="left">验证码</view>
+    <input class="right" bindinput="code" type="number" placeholder="请输入验证码" value="{{code}}"></input>
+  </view>
+      <view class="submit" bindtap="tijiao">保存</view>

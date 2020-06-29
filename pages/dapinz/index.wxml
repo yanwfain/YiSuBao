@@ -1,0 +1,20 @@
+<view class="top">
+  {{listIarry.dk_title1}}
+</view>
+<view class='pages'>
+  <!-- 图片 -->
+  <view class="images_box">
+    <block wx:key="imgbox" wx:for="{{imgbox}}">
+      <view class='img-box'>
+        <image class='img' src='{{item}}'></image>
+        <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete1'>
+          <image class='img' src='http://zsb.baike360.cn/public/image/dele.png'></image>
+        </view>
+      </view>
+    </block>
+    <view class='img-box' bindtap='addPic1'  wx:if="{{imgbox.length==0}}">
+      <image class='img' src='http://zsb.baike360.cn/public/image/tupian.png'></image>
+    </view>
+  </view>
+</view>
+<view class="submit" bindtap="submit">提交</view>

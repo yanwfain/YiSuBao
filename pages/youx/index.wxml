@@ -1,0 +1,5 @@
+ <view class="list">
+    <view class="left">电子邮箱</view>
+    <input class="right" placeholder="请输入电子邮箱" bindinput="email" value="{{email}}"></input>
+  </view>
+      <view class="submit" bindtap="tijiao">保存</view>

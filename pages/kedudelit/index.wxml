@@ -1,0 +1,70 @@
+<block wx:for="{{movieList}}" wx:key="index">
+
+
+  <view class="cont">
+    <view class="title">
+      <view class="left_1">
+        {{item.order_type}}
+      </view>
+      <view class="right_1">
+        邀请人 :
+        <image src="{{item.lawyer_head}}"></image>
+        <view> {{item.lawyer_name}}</view>
+      </view>
+    </view>
+    <view class="tit_botom">
+      <view class="code_mun">申请编号:{{item.order_sn}}</view>
+      <view class="time"> {{item.createtime}}</view>
+    </view>
+    <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+    <view class="title_name" style="padding-top:20rpx">保险公司：{{item.insurance_company}}</view>
+    <view class="title_name" style="padding-bottom:20rpx;">人民法院：{{item.court}} </view>
+    <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+    <view class="cont-list">
+      <view class="list_l">
+        <view class="micker">{{item.warrant_price}}</view>
+        <view class="txt">担保金额</view>
+      </view>
+      <view class="list_l">
+        <view class="micker">{{item.warrant_money}}</view>
+        <view class="txt">担保费</view>
+      </view>
+      <view class="list_l">
+        <view class="micker">货币现金</view>
+        <view class="txt">标的类型</view>
+      </view>
+    </view>
+    <view class="bot">
+      <!-- <view class="left_bot_lt" wx:if="{{item.status=='未提交'}}" bindtap="baoquan" data-id="{{item.id}}">编辑</view>
+    <view class="left_bot_lt"  wx:else bindtap="baoquans"  data-id="{{item.id}}">查看</view> -->
+      <view class="right_bot_lt">{{item.status}}</view>
+    </view>
+  </view>
+  <view class="cont" wx:if="{{item.order_type==2}}">
+    <view class="title">继续执行</view>
+    <view class="tit_botom">
+      <view class="code_mun">申请编号:{{item.order_sn}}</view>
+      <view class="time">{{item.createtime}}</view>
+    </view>
+    <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+    <view class="title_name" style="padding-top:20rpx">保险公司：{{item.insurance_company}}</view>
+    <view class="title_name" style="padding-bottom:20rpx;">人民法院：{{item.court}} </view>
+    <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+    <view class="cont-list">
+      <view class="list_l">
+        <view class="micker">{{item.warrant_price}}</view>
+        <view class="txt">担保金额</view>
+      </view>
+      <view class="list_l">
+        <view class="micker">{{item.warrant_money}}</view>
+        <view class="txt">担保费</view>
+      </view>
+    </view>
+    <view class="bot">
+      <!-- <view class="left_bot_lt" bindtap="jixuFn" wx:if="{{item.status=='未提交'}}" data-id="{{item.id}}">编辑</view>
+    <view class="left_bot_lt" wx:else bindtap="jixuFns"  data-id="{{item.id}}">查看</view> -->
+      <view class="right_bot_lt">{{item.status}}</view>
+    </view>
+  </view>
+</block>
+<view style="text-align:center;padding:20rpx;coor:gray;font-size:28rpx;" wx:if="{{movieList.length<1}}">暂时没有更多数据了</view>

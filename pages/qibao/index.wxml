@@ -1,0 +1,55 @@
+<view class="cont" style='margin-top:20rpx;'>
+  <view class="left">{{listIarry.sqx_btype}}</view>
+  <view class="right">
+    <picker bindchange="pickerProChangef" range="{{ pickerProDataf }}" range-key="{{'name'}}" value="{{countryIndex}}">
+      <view class="picker-area-text" style="">
+        {{pickerProDataf[countryIndex].name?pickerProDataf[countryIndex].name:"请选择"}}
+        <view class="txt_jt"></view>
+      </view>
+    </picker>
+  </view>
+</view>
+<view class="cont" wx:if="{{countryIndex==2||countryIndex==3}}">
+  <view class="left">企业名称</view>
+  <input class="right" placeholder="请填写企业名称" bindinput="inp1" value="{{inp1}}"></input>
+</view>
+<view class="cont" wx:if="{{countryIndex==1||!countryIndex}}">
+  <view class="left">{{listIarry.sqx_bname}}</view>
+  <input class="right" placeholder="请填写{{listIarry.sqx_bname}}" bindinput="inp2" value="{{inp2}}"></input>
+</view>
+<view class="cont" wx:if="{{countryIndex==1||!countryIndex}}">
+  <view class="left">证 件 类 型</view>
+  <view class="right">
+    <picker bindchange="pickerProChangef1" range="{{ pickerProDataf1 }}" range-key="{{'name'}}" value="{{countryIndex1}}">
+      <view class="picker-area-text" style="">
+        {{pickerProDataf1[countryIndex1].name?pickerProDataf1[countryIndex1].name:"请选择"}}
+        <view class="txt_jt"></view>
+      </view>
+    </picker>
+  </view>
+</view>
+<view class="cont" wx:if="{{countryIndex==2||countryIndex==3}}">
+  <view class="left">证 件 类 型</view>
+  <view class="right">
+    <picker bindchange="pickerProChangef2" range="{{ pickerProDataf2 }}" range-key="{{'name'}}" value="{{countryIndex2}}">
+      <view class="picker-area-text" style="">
+        {{pickerProDataf2[countryIndex2].name?pickerProDataf2[countryIndex2].name:"请选择"}}
+        <view class="txt_jt"></view>
+      </view>
+    </picker>
+  </view>
+</view>
+<view class="cont" >
+  <view class="left">证 件 号 码</view>
+  <input class="right" placeholder="请填写证件号码" bindinput="inp3" value="{{inp3}}"></input>
+</view>
+<view class="cont" wx:if="{{countryIndex==2||countryIndex==3}}">
+  <view class="left">法定代表人姓名</view>
+  <input class="right" placeholder="请填写法定代表人姓名" bindinput="inp4" value="{{inp4}}"></input>
+</view>
+<view class="btn" bindtap="submit" wx:if="{{!ishow}}">
+  提交
+</view>
+<view class="btn" bindtap="submits" wx:if="{{ishow}}">
+  修改
+</view>

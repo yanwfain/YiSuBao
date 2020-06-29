@@ -1,0 +1,73 @@
+<view class="tab">
+  <view class="aall {{tid==0?'active':''}}" data-id="0" bindtap="bindlist">全部</view>
+  <view class="aall {{tid==1?'active':''}}" data-id="1" bindtap="bindlist">未提交</view>
+  <view class="aall {{tid==2?'active':''}}" data-id="2" bindtap="bindlist">待付款</view>
+  <view class="aall {{tid==3?'active':''}}" data-id="3" bindtap="bindlist">待审核</view>
+  <view class="aall {{tid==4?'active':''}}" data-id="4" bindtap="bindlist">已提交</view>
+  <view class="aall {{tid==5?'active':''}}" data-id="5" bindtap="bindlist">已完成</view>
+  <view class="aall {{tid==6?'active':''}}" data-id="6" bindtap="bindlist">已驳回</view>
+  <view class="aall {{tid==7?'active':''}}" data-id="7" bindtap="bindlist">已关闭</view>
+</view>
+<block  wx:for="{{movieList}}" wx:key="index">
+<view class="cont"  wx:if="{{item.order_type==1}}">
+<view class="qux" wx:if="{{item.status!='已关闭'&&item.status!='系统关闭'}}"  bindtap="deleFn" data-id="{{item.id}}">取消订单</view>
+  <view class="title">{{item.order_type_name}}</view>
+  <view class="tit_botom">
+    <view class="code_mun">申请编号:{{item.order_sn}}</view>
+    <view class="time"> {{item.createtime}}</view>
+  </view>
+  <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+  <view class="title_name" style="padding-top:20rpx">{{listIarry.sq_baoxian}}{{item.insurance_company}}</view>
+  <view class="title_name" style="padding-bottom:20rpx;">{{listIarry.sq_fayuan}}{{item.court}} </view>
+  <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+  <view class="cont-list">
+    <view class="list_l">
+      <view class="micker">{{item.warrant_price}}</view>
+      <view class="txt">{{listIarry.danbao}}</view>
+    </view>
+    <view class="list_l">
+      <view class="micker">{{item.warrant_money}}</view>
+      <view class="txt">{{listIarry.jx_danbao}}</view>
+    </view>
+    <view class="list_l">
+      <view class="micker">{{item.type}}</view>
+      <view class="txt">{{listIarry.biaodi}}</view>
+    </view>
+  </view>
+  <view class="bot">
+    <view class="left_bot_lt" data-tname="{{item.type}}" bindtap="baoquan" wx:if="{{item.status=='未提交'}}" data-id="{{item.id}}">编辑</view>
+    
+    <view class="left_bot_lt" data-tname="{{item.type}}" wx:if="{{item.status!='未提交'}}" bindtap="baoquans"  data-id="{{item.id}}">查看</view>
+        <view class="right_bot_lt"  wx:if="{{item.status=='待付款'}}" data-order_sn="{{item.order_sn}}" data-insurance_company_id="{{item.insurance_company_id}}" data-insurance_company_name="{{item.insurance_company}}" data-warrant_money="{{item.warrant_money}}" data-order_id="{{item.id}}" bindtap="bindfu">{{item.status}}</view>
+         <view class="right_bot_lt" wx:if="{{item.status!='待付款'}}">{{item.status}}</view>
+  </view>
+</view>
+<view class="cont" wx:if="{{item.order_type==2}}">
+<view class="qux" wx:if="{{item.status!='已关闭'&&item.status!='系统关闭'}}"  bindtap="deleFn"  data-id="{{item.id}}">取消订单</view>
+  <view class="title">{{item.order_type_name}}</view>
+  <view class="tit_botom">
+    <view class="code_mun">申请编号:{{item.order_sn}}</view>
+    <view class="time">{{item.createtime}}</view>
+  </view>
+  <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+  <view class="title_name" style="padding-top:20rpx">{{listIarry.sq_baoxian}}{{item.insurance_company}}</view>
+  <view class="title_name" style="padding-bottom:20rpx;">{{listIarry.sq_fayuan}}{{item.court}} </view>
+  <view style="width:100%;height:2rpx;background:#F9F9F9;"></view>
+  <view class="cont-list">
+    <view class="list_l">
+      <view class="micker">{{item.warrant_price}}</view>
+      <view class="txt">{{listIarry.danbao}}</view>
+    </view>
+    <view class="list_l">
+      <view class="micker">{{item.warrant_money}}</view>
+      <view class="txt">{{listIarry.jx_danbao}}</view>
+    </view>
+  </view>
+  <view class="bot">
+    <view class="left_bot_lt" bindtap="jixuFn" wx:if="{{item.status=='未提交'}}" data-id="{{item.id}}">编辑</view>
+    <view class="left_bot_lt" wx:if="{{item.status!='未提交'}}" bindtap="jixuFns"  data-id="{{item.id}}">查看</view>
+        <view class="right_bot_lt"  wx:if="{{item.status=='待付款'}}" data-order_sn="{{item.order_sn}}" data-insurance_company_id="{{item.insurance_company_id}}" data-insurance_company_name="{{item.insurance_company}}" data-warrant_money="{{item.warrant_money}}" data-order_id="{{item.id}}" bindtap="bindfu">{{item.status}}</view>
+         <view class="right_bot_lt" wx:if="{{item.status!='待付款'}}">{{item.status}}</view>
+  </view>
+</view>
+</block>

@@ -1,0 +1,204 @@
+/* pages/quanbao/index.wxss */
+
+page{
+  background: rgb(165, 210, 254);
+}
+.opsdisop{
+  display: flex;
+  align-items: center;
+}
+.topform {
+  width: 94%;
+  margin: 0 auto;
+  margin-top: 10rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+  background: white;
+  /* padding: 6rpx 0; */
+}
+
+.tab-view {
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.tit {
+  font-size: 32rpx;
+  margin-left: 10rpx;
+}
+
+.val_txt {
+  font-size: 28rpx;
+  color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 10rpx;
+}
+
+.txt_jt {
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid gray;
+  border-right: 1px solid gray;
+  transform: rotate(45deg);
+}
+
+.serarch {
+  width: 80%;
+  border-radius: 16rpx;
+  padding: 24rpx 0;
+  font-size: 30rpx;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  background: rgb(7, 193, 94); 
+  margin-bottom:20rpx;
+}
+.cont_lsit {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  background: white;
+}
+
+.list_lt {
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.list_lt image {
+  width: 70rpx;
+  height: 78rpx;
+}
+
+.con-tit {
+  width: 80%;
+  margin-left: 4%;
+}
+
+.tit-1 {
+  font-size: 34rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tit-2 {
+  font-size: 28rpx;
+  color: gray;
+  width: 100%;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+}
+.cons_lsi{
+  width: 90%;
+  margin: 0 auto;
+  margin-top:30rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  background: white;
+  padding: 20rpx 0;
+  /* box-shadow: 0.3px 1px 2px 0.2px grey; */
+
+}
+.top-vie{
+  width: 98%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.top-vie image{
+  width: 140rpx;
+  height: 80rpx;
+}
+.lsi-tit{
+  width: 80%;
+  margin-left:2%;
+
+}
+.lsi-tit1{
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.lsi-tit2 {
+  font-size: 26rpx;
+  color: #666666;
+}
+.time_lisy{
+  /* width: 94%; */
+  margin-left:20rpx;
+  /* margin: 0 auto; */
+  display: flex;
+  align-items: center;
+  margin-top:12rpx;
+  margin-bottom: 12rpx;
+ 
+}
+.time_lisy image{
+  width: 40rpx;
+  height: 40rpx;
+
+}
+.lisy_tit1{
+  font-size: 28rpx;
+  color: #F96E29;
+  margin-left:14rpx;
+}
+.baofei{
+  width: 94%;
+  margin: 0 auto;
+  margin-top:10rpx;
+  margin-bottom:10rpx;
+  color: black;
+  font-weight: 600;
+}
+.btn{
+  width: 26%;
+  text-align: center;
+  padding: 12rpx 0;
+  /* margin-top: 40rpx; */
+  color: white;
+  font-size: 30rpx;
+  border-radius: 16rpx;
+  background: #0582fc;
+}
+.ttx{
+  text-align: center;
+  font-size: 28rpx;
+  margin: 20rpx;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button{
+  padding: 0;
+  margin: 0;
+  border: none;
+  line-height: none;
+  background: rgb(165, 210, 254);
+  color: blue;
+   font-size:40rpx;
+}
+
+button::after {
+  border: none;
+} 
+.txt_toit{
+  font-size: 26rpx;
+  color: gray;
+  margin: 10rpx;
+  text-align: center;
+}

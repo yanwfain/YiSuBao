@@ -1,0 +1,268 @@
+<view class="cont_top">
+  <view class="title-top">{{listIarry.sq_danbao}}</view>
+  <view class="txt-top" bindtap="delitwenFn">{{listIarry.sq_susong}}
+    <text class="txt_jt"></text>
+  </view>
+  <view class="tit_pick">{{warrant_price}}</view>
+  <view class="reuos-two">
+    <view class="fei">
+      <view class="gg1">{{listIarry.sq_danbaofei}}</view>
+      <view class="gg2">{{warrant_money}}</view>
+      <view class="gg2">（{{listIarry.sq_felv}}:{{listcnt.warrant_rate}}%）</view>
+    </view>
+    <view class="biao">
+      <view class="gg1">{{listIarry.sq_biaodi}}</view>
+      <view class="gg2">{{tname}}</view>
+    </view>
+  </view>
+  <view class="baoxian">{{listIarry.sq_baoxian}}{{insurance_company_name}}</view>
+  <view class="baoxian">{{listIarry.sq_fayuan}}{{listcnt.court_id_name}}</view>
+</view>
+<view class="cont-list bg1">
+
+  <view class="titl_an">{{listIarry.sq_anjian}}
+    <text style="color:#FF0000;font-size:26rpx;">{{listIarry.sq_kejian}}</text> </view>
+  <view class="list-txtinp">
+    <view class="left-tit"><text style="color:red;">*</text> {{listIarry.sq_susongsub}}</view>
+    <input class="inp1" type="digit" placeholder="请填写{{listIarry.sq_susongsub}}" bindinput="case_price" value="{{case_price}}"></input>
+  </view>
+  <view class="list-txtinp">
+    <view class="left-tit">{{listIarry.sq_anhao}}</view>
+    <input class="inp1" placeholder="请填写{{listIarry.sq_anhao}}" bindinput="case_num" value="{{case_num}}"></input>
+  </view>
+  <view class="list-txtinp">
+    <view class="left-tit">{{listIarry.sq_anyou}}</view>
+    <input class="inp1" placeholder="请填写{{listIarry.sq_anyou}}" bindinput="case_note" value="{{case_note}}"></input>
+  </view>
+  <view class="list-txtinp">
+    <view class="left-tit">{{listIarry.sq_lvshiname}}</view>
+    <input class="inp1" placeholder="请填写{{listIarry.sq_lvshiname}}" bindinput="lawyer_name" value="{{lawyer_name}}"></input>
+  </view>
+  <view class="list-txtinp">
+    <view class="left-tit">{{listIarry.sq_lvshitel}}</view>
+    <input class="inp1" type="number" placeholder="请填写{{listIarry.sq_lvshitel}}" bindinput="lawyer_mobile" value="{{lawyer_mobile}}"></input>
+  </view>
+</view>
+<view class="cont-list bg2">
+  <view class="titl_an"><text style="color:red;">*</text> {{listIarry.sq_beishenq}}</view>
+  <view class="cont_userlist" wx:if="{{isbtn==1}}" wx:for="{{listcnt.man}}" wx:key="index" data-index="{{index}}" data-name="{{item.name}}" data-id_num="{{item.id_num}}" data-id="{{item.id}}">
+    
+    <view class="user-name">{{item.name}}</view>
+    <view class="user-name">{{item.id_num}}</view>
+  </view>
+  <view class="cont_userlist" bindtap="bindcatdelit" wx:if="{{isbtn!=1||!isbtn}}" wx:for="{{listcnt.man}}" wx:key="index" data-index="{{index}}" data-name="{{item.name}}" data-id_num="{{item.id_num}}" data-id="{{item.id}}">
+    <view class="txt_jt" style="color:gray; position: absolute; right:8rpx;top:20%;"></view>
+    <view class="user-name">{{item.name}}</view>
+    <view class="user-name">{{item.id_num}}</view>
+  </view>
+  <view class="bot_view" bindtap="user_delit" wx:if="{{isbtn!=1||!isbtn}}">
+    <view class="icons">+</view>
+    <view class="bot-title">添加{{listIarry.sq_beishenq}}信息</view>
+  </view>
+</view>
+<view class="cont-list bg1">
+  <view class="titl_an"><text style="color:red;">*</text> {{listIarry.sq_toubao}}</view>
+  <view class="cont_userlist" wx:if="{{isbtn==1}}" wx:for="{{listcnt.policy}}" wx:key="index" data-index="{{index}}" data-name="{{item.name}}" data-id_num="{{item.id_num}}" data-num_type="{{item.num_type}}" data-id="{{item.id}}" data-status="{{item.status}}"
+    data-company_name="{{item.company_name}}">
+
+    <view class="user-name">{{item.name}}</view>
+    <view class="list-xinxi">
+      <view class="left-ltit" wx:if="{{item.status==1}}">自然人</view>
+      <view class="left-ltit" wx:if="{{item.status==2}}">法人</view>
+      <view class="left-ltit" wx:if="{{item.status==3}}">非法人组织</view>
+      <view class="user-name">{{item.id_num}}</view>
+    </view>
+  </view>
+  <view class="cont_userlist" bindtap="tibaoFns" wx:if="{{isbtn!=1||!isbtn}}" wx:for="{{listcnt.policy}}" wx:key="index" data-index="{{index}}" data-name="{{item.name}}" data-id_num="{{item.id_num}}" data-num_type="{{item.num_type}}" data-id="{{item.id}}" data-status="{{item.status}}"
+    data-company_name="{{item.company_name}}">
+    <view class="txt_jt" style="color:gray; position: absolute; right:8rpx;top:20%;"></view>
+    <view class="user-name">{{item.name}}</view>
+    <view class="list-xinxi">
+      <view class="left-ltit" wx:if="{{item.status==1}}">自然人</view>
+      <view class="left-ltit" wx:if="{{item.status==2}}">法人</view>
+      <view class="left-ltit" wx:if="{{item.status==3}}">非法人组织</view>
+      <view class="user-name">{{item.id_num}}</view>
+    </view>
+  </view>
+  <view class="bot_view" bindtap="tibaoFn" wx:if="{{isbtn!=1||!isbtn}}">
+    <view class="icons">+</view>
+    <view class="bot-title">添加{{listIarry.sq_toubao}}</view>
+  </view>
+</view>
+<view class="cont-list bg2">
+  <view class="titl_an"><text style="color:red;">*</text> {{listIarry.sq_caichan}}</view>
+  <view class="cont_userlist" wx:if="{{isbtn==1}}" wx:for="{{listcnt.note}}" wx:key="index" data-subject_id="{{item.subject_id}}" data-property_value="{{item.property_value}}" data-id="{{item.id}}" data-bank_num="{{item.bank_num}}" data-bonds_name="{{item.bonds_name}}"
+    data-car_num="{{item.car_num}}" data-company="{{item.company}}" data-land_address="{{item.land_address}}" data-land_authority="{{item.land_authority}}" data-land_name="{{item.land_name}}" data-land_num="{{item.land_num}}" data-land_type="{{item.land_type}}"
+    data-num="{{item.num}}" data-open_bank="{{item.open_bank}}" data-property_note="{{item.property_note}}" data-property_value="{{item.property_value}}">
+    <view class="user-name" wx:if="{{item.subject_id==1}}">货币现金</view>
+    <view class="user-name" wx:if="{{item.subject_id==2}}">存款</view>
+    <view class="user-name" wx:if="{{item.subject_id==3}}">债券</view>
+    <view class="user-name" wx:if="{{item.subject_id==4}}">土地使用权</view>
+    <view class="user-name" wx:if="{{item.subject_id==5}}">房产</view>
+    <view class="user-name" wx:if="{{item.subject_id==6}}">交通运输工具</view>
+    <view class="user-name" wx:if="{{item.subject_id==7}}">机器设备</view>
+    <view class="user-name" wx:if="{{item.subject_id==8}}">产品、原材料</view>
+    <view class="user-name" wx:if="{{item.subject_id==9}}">债权</view>
+    <view class="user-name" wx:if="{{item.subject_id==10}}">股权</view>
+    <view class="user-name" wx:if="{{item.subject_id==11}}">股票</view>
+    <view class="user-name" wx:if="{{item.subject_id==12}}">基金</view>
+    <view class="user-name" wx:if="{{item.subject_id==13}}">知识产权</view>
+    <view class="user-name" wx:if="{{item.subject_id==14}}">古玩字画</view>
+    <view class="user-name" wx:if="{{item.subject_id==15}}">其他财产</view>
+    <view class="user-name">{{item.property_value}}</view>
+  </view>
+  <view class="cont_userlist" wx:if="{{isbtn!=1||!isbtn}}" bindtap="caichanFns" wx:for="{{listcnt.note}}" wx:key="index" data-subject_id="{{item.subject_id}}" data-property_value="{{item.property_value}}" data-id="{{item.id}}" data-bank_num="{{item.bank_num}}"
+    data-bonds_name="{{item.bonds_name}}" data-car_num="{{item.car_num}}" data-company="{{item.company}}" data-land_address="{{item.land_address}}" data-land_authority="{{item.land_authority}}" data-land_name="{{item.land_name}}" data-land_num="{{item.land_num}}"
+    data-land_type="{{item.land_type}}" data-num="{{item.num}}" data-open_bank="{{item.open_bank}}" data-property_note="{{item.property_note}}" data-property_value="{{item.property_value}}">
+    <view class="txt_jt" style="color:gray; position: absolute; right:8rpx;top:20%;"></view>
+    <view class="user-name" wx:if="{{item.subject_id==1}}">货币现金</view>
+    <view class="user-name" wx:if="{{item.subject_id==2}}">存款</view>
+    <view class="user-name" wx:if="{{item.subject_id==3}}">债券</view>
+    <view class="user-name" wx:if="{{item.subject_id==4}}">土地使用权</view>
+    <view class="user-name" wx:if="{{item.subject_id==5}}">房产</view>
+    <view class="user-name" wx:if="{{item.subject_id==6}}">交通运输工具</view>
+    <view class="user-name" wx:if="{{item.subject_id==7}}">机器设备</view>
+    <view class="user-name" wx:if="{{item.subject_id==8}}">产品、原材料</view>
+    <view class="user-name" wx:if="{{item.subject_id==9}}">债权</view>
+    <view class="user-name" wx:if="{{item.subject_id==10}}">股权</view>
+    <view class="user-name" wx:if="{{item.subject_id==11}}">股票</view>
+    <view class="user-name" wx:if="{{item.subject_id==12}}">基金</view>
+    <view class="user-name" wx:if="{{item.subject_id==13}}">知识产权</view>
+    <view class="user-name" wx:if="{{item.subject_id==14}}">古玩字画</view>
+    <view class="user-name" wx:if="{{item.subject_id==15}}">其他财产</view>
+    <view class="user-name">{{item.property_value}}</view>
+  </view>
+  <view class="bot_view" bindtap="caichanFn" wx:if="{{isbtn!=1||!isbtn}}">
+    <view class="icons">+</view>
+    <view class="bot-title">添加{{listIarry.sq_caichan}}</view>
+  </view>
+</view>
+<view class="cont-list bg1">
+  <view class="titl_an"><text style="color:red;">*</text> {{listIarry.sq_youji}}</view>
+  <block wx:if="{{isbtn==1}}">
+    <view class="cont_userlist" wx:if="{{recipients}}">
+      <view class="user-name">{{recipients}}</view>
+      <view class="user-name">{{recipients_mobile}}</view>
+      <view class="user-name">{{address}}</view>
+    </view>
+  </block>
+  <block wx:if="{{isbtn!=1||!isbtn}}">
+    <view class="cont_userlist" bindtap='wxaddress' wx:if="{{recipients}}">
+      <view class="txt_jt" style="color:gray; position: absolute; right:8rpx;top:20%;"></view>
+      <view class="user-name">{{recipients}}</view>
+      <view class="user-name">{{recipients_mobile}}</view>
+      <view class="user-name">{{address}}</view>
+    </view>
+  </block>
+  <view class="bot_view" wx:if="{{!recipients ||isbtn!=1}}">
+    <view class="icons">+</view>
+    <view class="bot-title" bindtap='wxaddress'>添加{{listIarry.sq_youji}}</view>
+  </view>
+</view>
+<view class="cont-list">
+  <view class="titl_an"><text style="color:red;">*</text> {{listIarry.sq_img1}}</view>
+  <view class='pages'>
+    <!-- 图片 -->
+    <view class="images_box">
+      <block wx:key="imgbox" wx:for="{{imgbox}}">
+        <view class='img-box' bindtap="topic_preview" data-url="{{item}}">
+          <image class='img' src='{{item}}'></image>
+          <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete1' wx:if="{{isbtn!=1||!isbtn}}">
+            <image class='img' src='http://zsb.baike360.cn/public/image/dele.png'></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{isbtn!=1||!isbtn}}">
+        <view class='img-box' bindtap='addPic1' wx:if="{{imgbox.length<99}}">
+          <image class='img' src='http://zsb.baike360.cn/public/image/tupian.png'></image>
+        </view>
+      </block>
+
+    </view>
+
+    <!-- <button bindtap='fb'>上传图片</button> -->
+  </view>
+  <view class="titl_an"><text style="color:red;">*</text>{{listIarry.sq_img2}}</view>
+  <view class='pages'>
+    <!-- 图片 -->
+    <view class="images_box">
+      <block wx:key="imgboxs" wx:for="{{imgboxs}}">
+        <view class='img-box'  bindtap="topic_preview1" data-url="{{item}}">
+          <image class='img' src='{{item}}'></image>
+          <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete1s' wx:if="{{isbtn!=1||!isbtn}}">
+            <image class='img' src='http://zsb.baike360.cn/public/image/dele.png'></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{isbtn!=1||!isbtn}}">
+        <view class='img-box' bindtap='addPic1s' wx:if="{{imgboxs.length<99}}">
+          <image class='img' src='http://zsb.baike360.cn/public/image/tupian.png'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="titl_an"><text style="color:red;">*</text> {{listIarry.sq_img3}}</view>
+  <view class='pages'>
+    <!-- 图片 -->
+    <view class="images_box">
+      <block wx:key="imgboxs1" wx:for="{{imgboxs1}}">
+        <view class='img-box'  bindtap="topic_preview2" data-url="{{item}}">
+          <image class='img' src='{{item}}'></image>
+          <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete1s1' wx:if="{{isbtn!=1||!isbtn}}">
+            <image class='img' src='http://zsb.baike360.cn/public/image/dele.png'></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{isbtn!=1||!isbtn}}">
+        <view class='img-box' bindtap='addPic1s1' wx:if="{{imgboxs1.length<99}}">
+          <image class='img' src='http://zsb.baike360.cn/public/image/tupian.png'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="titl_an"><text style="color:red;">*</text> {{listIarry.sq_img4}}</view>
+  <view class='pages'>
+    <!-- 图片 -->
+    <view class="images_box">
+      <block wx:key="imgboxs12" wx:for="{{imgboxs12}}">
+        <view class='img-box'  bindtap="topic_preview3" data-url="{{item}}">
+          <image class='img' src='{{item}}'></image>
+          <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete1s12' wx:if="{{isbtn!=1||!isbtn}}">
+            <image class='img' src='http://zsb.baike360.cn/public/image/dele.png'></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{isbtn!=1||!isbtn}}">
+        <view class='img-box' bindtap='addPic1s12' wx:if="{{imgboxs12.length<99}}">
+          <image class='img' src='http://zsb.baike360.cn/public/image/tupian.png'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="rideo">
+  <radio-group bindchange="ycfp">
+    <view class="zhifu_box" bindtap="riods">
+      <radio bindtap="riods" checked="{{ridos === '1' ? 'true' : ''}}" value="1"></radio>
+      <view class="left">
+        <view>已阅读并同意
+          <text catchtap="delitwenFns" style="color:#0C60FF">{{listIarry.sq_bottomxieyi}}</text>
+        </view>
+      </view>
+    </view>
+  </radio-group>
+</view>
+<!-- <view class="fied_log" bindtap="open"> -->
+<!-- <view class="fied_log" bindtap="openshow">
+  <image src="../../image/kefu.png"></image>
+</view> -->
+<view class="opsticy" bindtap="falFn" wx:if="{{isshowModel}}"></view>
+<view class="div-tablefu" wx:if="{{isshowModel}}">
+  <view class="bodda" bindtap="open">拨打电话</view>
+  <button class="kefu_btn" open-type='contact' session-from='' style="background: #0582FC">联系客服</button>
+</view>
+<view class="kefu_btns" bindtap="openshow">联系客服</view>
+<view class="bottom_feid" wx:if="{{isbtn!=1||!isbtn}}">
+  <view class="left_zan" bindtap="submit" data-id='1'>暂存</view>
+  <view class="right_ti" bindtap="submit" data-id="2">提交</view>
+</view>

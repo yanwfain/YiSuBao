@@ -1,0 +1,20 @@
+<view class="list">
+  <view class="left">姓名</view>
+  <input class="right" placeholder="请输入姓名" bindinput="name" value="{{name}}"></input>
+</view>
+<view class="list">
+  <view class="left">证件类型</view>
+  <view class="right">
+    <picker bindchange="pickerProChangef1" range="{{ pickerProDataf1 }}" range-key="{{'name'}}" value="{{countryIndex1}}">
+      <view class="picker-area-text" style="">
+        {{pickerProDataf1[countryIndex1].name?pickerProDataf1[countryIndex1].name:"请选择"}}
+        <view class="txt_jt"></view>
+      </view>
+    </picker>
+  </view>
+</view>
+<view class="list">
+  <view class="left">证件号码</view>
+  <input class="right" placeholder="请输入证件号码" bindinput="id_num" value="{{id_num}}"></input>
+</view>
+<view class="submit" bindtap="tijiao">保存</view>

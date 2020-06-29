@@ -1,0 +1,3 @@
+<view class="title">{{list.title}}</view>
+<view class="titles">{{list.createtime}}</view>
+  <view class="txt11"><rich-text nodes="{{list.note}}"></rich-text></view>

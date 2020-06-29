@@ -1,0 +1,12 @@
+<view class="jifen">
+  <view class="numjifen">{{current_score?current_score:'0'}}</view>
+  <view class="txt">该积分永久有效</view>
+</view>
+
+<view class="list" wx:for="{{movieList}}" wx:key="index">
+  <view class="left_t">
+    <view class="tit">{{item.type}}</view>
+    <view class="time">{{item.createtime}}</view>
+  </view>
+  <view class="nums"><text wx:if="{{item.score_type==1}}">+</text> <text wx:if="{{item.score_type==2}}">-</text> {{item.num}}积分</view>
+</view>

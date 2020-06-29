@@ -1,0 +1,95 @@
+<view class="topform">
+  <view class="tab-view" style="border-left:10rpx solid #5D56FF;">
+    <view class="tit">{{listIarry.jingban}}</view>
+    <view class="val_txt" bindtap="actiyFn">
+      {{settitle?settitle:'请选择'}}
+      <text class="txt_jt"></text>
+    </view>
+  </view>
+  <view class="tab-view" style="border-left:10rpx solid #F96E29;">
+    <view class="tit">{{listIarry.danbao}}</view>
+    <input class="val_txt" type="digit" style="text-align:right" bindinput="inpFn" placeholder="请输入{{listIarry.danbao}}" value="{{pickers}}"></input>
+  </view>
+  <view class="tab-view" style="border:none;border-left:10rpx solid #FA9D02;">
+    <view class="tit">{{listIarry.biaodi}}</view>
+    <view class="val_txt">
+      <picker bindchange="pickerProChangef" range="{{ pickerProDataf }}" range-key="{{'name'}}" value="{{countryIndex}}">
+        <view class="picker-area-text" style="">
+          {{pickerProDataf[countryIndex].name?pickerProDataf[countryIndex].name:"请选择"}}
+        </view>
+      </picker>
+      <text class="txt_jt"></text>
+    </view>
+  </view>
+</view>
+<view class="serarch" bindtap="searFn">{{listIarry.chazhao}}</view>
+<block wx:if="{{is_open==2}}">
+  <view class="cont_lsit" wx:if="{{!isshow}}">
+    <view class="list_lt">
+      <image src="http://zsb.baike360.cn/public/image/jisu.png"></image>
+      <view class="con-tit">
+        <view class="tit-1">{{listIarry.jisu}}</view>
+        <view class="tit-2">{{listIarry.jisudelit}}</view>
+      </view>
+    </view>
+    <view class="list_lt">
+      <image src="http://zsb.baike360.cn/public/image/day.png"></image>
+      <view class="con-tit">
+        <view class="tit-1">{{listIarry.dainzi}}</view>
+        <view class="tit-2">{{listIarry.dainzidelit}}</view>
+      </view>
+    </view>
+    <view class="list_lt">
+      <image src="http://zsb.baike360.cn/public/image/jianyan.png"></image>
+      <view class="con-tit">
+        <view class="tit-1">{{listIarry.baohan}}</view>
+        <view class="tit-2">{{listIarry.baohandelit}}</view>
+      </view>
+    </view>
+    <view class="list_lt">
+      <image src="http://zsb.baike360.cn/public/image/huifang.png"></image>
+      <view class="con-tit">
+        <view class="tit-1">{{listIarry.jishi}}</view>
+        <view class="tit-2">{{listIarry.jishidelit}}</view>
+      </view>
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{isshow}}">
+  <view class="cons_lsi" bindtap="shnqiFmn" wx:for="{{listcnt}}" wx:key="index" data-id="{{item.id}}" data-warrant_money="{{item.warrant_money}}" data-rate="{{item.rate}}" wx:if="{{item.min_price>0}}">
+    <view class="top-vie">
+      <image src="{{item.image}}"></image>
+      <view class="lsi-tit">
+        <view class="lsi-tit1">{{item.name}}</view>
+        <view class="lsi-tit2">提供服务</view>
+      </view>
+    </view>
+    <view class="opsdisop" style="border-bottom:2rpx solid rgb(249,249,249) ">
+      <block wx:if="{{item.label.length>0}}">
+        <block wx:for="{{item.label}}" wx:for-item="ite">
+          <view class="time_lisy">
+            <image src="{{ite.image}}"></image>
+            <view class="lisy_tit1">{{ite.name}}</view>
+          </view>
+        </block>
+      </block>
+    </view>
+
+
+    <view class="baofei" >{{listIarry.sq_danbaofei}}:
+      <text style="color:#F96E29;font-size:28rpx;">{{item.warrant_money}}</text> </view>
+    <view class="baofei" style="display:flex;align-items: center; justify-content: space-between">
+      <view>
+        费率:
+        <text style="color:#F96E29;font-size:28rpx;">{{item.rate}}%(最低保费{{item.min_price}}元)</text>
+      </view>
+      <view class="btn" style="font-weight:300;">{{listIarry.sq_title}}</view>
+    </view>
+
+  </view>
+  <view class="ttx">*如需咨询{{listIarry.qita}}，请联系
+    <button open-type="contact">线上客服</button>
+  </view>
+</block>
+<view class="txt_toit" wx:if="{{titlop}}">以上由{{titlop}}提供</view>

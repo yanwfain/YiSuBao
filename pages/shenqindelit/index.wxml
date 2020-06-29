@@ -1,0 +1,14 @@
+<view class="cont">
+  <view class="cont-1">
+  <view class="">姓名</view>
+    <!-- <image style="width:50rpx;height:50rpx;" src="http://zsb.baike360.cn/public/image/xm.png"></image> -->
+    <input class="inp1" placeholder="请输入被申请人姓名" bindinput="inp1" value="{{input1}}"></input>
+  </view>
+  <view class="cont-1">
+  <view class="">证件号</view>
+    <!-- <image style="width:60rpx;height:50rpx;" src="http://zsb.baike360.cn/public/image/zj.png"></image> -->
+    <input class="inp1" placeholder="请输入证件号" bindinput="inp2" value="{{input2}}"></input>
+  </view>
+</view>
+<view class="btn" wx:if="{{!isshow}}" bindtap="submit">保存</view>
+<view class="btn" wx:if="{{isshow}}" bindtap="submits">修改</view>

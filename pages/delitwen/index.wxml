@@ -1,0 +1,11 @@
+<view class="txt" wx:if="{{listcnt.baoquan_note&&tids==1}}">
+  <rich-text nodes="{{listcnt.baoquan_note}}"></rich-text>
+ 
+</view>
+<view class="txt" wx:elif="{{listcnt.jixu_note}}">
+  <rich-text nodes="{{listcnt.jixu_note}}"></rich-text>
+</view>
+<view class="txt" wx:else>
+  <rich-text nodes="{{listcnt.explain}}"></rich-text>
+</view>
+ <!-- <view  wx:if="{{!baoquan_note||!jixu_note}}" style="text-align:center;padding:20rpx;border-bottom:1px solid gray">暂无数据</view> -->

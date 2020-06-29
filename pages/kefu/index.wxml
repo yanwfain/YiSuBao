@@ -1,0 +1,4 @@
+<view class="div-tablefu">
+  <view class="bodda" bindtap="open">400-818-8686</view>
+  <button class="kefu_btn" open-type='contact' session-from='' style="background: #0582FC">线上客服</button>
+</view>

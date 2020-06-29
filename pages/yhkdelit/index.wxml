@@ -1,0 +1,82 @@
+<view class="tab">
+  <view class="cont_lsit {{tid==1?'active':''}}" data-id="1" bindtap="clickFn">银行卡</view>
+  <view class="cont_lsit {{tid==2?'active':''}}" data-id="2" bindtap="clickFn">微信</view>
+  <view class="cont_lsit {{tid==3?'active':''}}" data-id="3" bindtap="clickFn">支付宝</view>
+</view>
+<view class="yhk" wx:if="{{tid==1}}">
+  <view class="list">
+    <view class="left">银行卡号</view>
+    <input class="right" placeholder="请输入卡号" value=""></input>
+  </view>
+    <view class="list">
+    <view class="left">开卡银行</view>
+    <input class="right" placeholder="请输入开卡银行" value=""></input>
+  </view>
+    <view class="list">
+    <view class="left">持卡人</view>
+    <input class="right" placeholder="持卡人姓名" value=""></input>
+  </view>
+    <view class="list">
+    <view class="left">手机号码</view>
+    <input class="right" placeholder="请留银行预留的手机号" value=""></input>
+  </view>
+
+    <view class="submit" bindtap="tijiao">保存</view>
+</view>
+
+<view class="yhk" wx:if="{{tid==2}}">
+  <view class="list">
+    <view class="left">微信名</view>
+    <input class="right" placeholder="请输入微信名" value=""></input>
+  </view>
+    <view class="list">
+    <view class="left">绑定手机</view>
+    <input class="right" placeholder="微信绑定手机号" value=""></input>
+  </view>
+  <view class="titl_an">上传微信收款码</view>
+  <view class='pages'>
+    <!-- 图片 -->
+    <view class="images_box">
+      <block wx:key="imgbox" wx:for="{{imgbox}}">
+        <view class='img-box'>
+          <image class='img' src='{{item}}'></image>
+          <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete1'>
+            <image class='img' src='http://zsb.baike360.cn/public/image/dele.png'></image>
+          </view>
+        </view>
+      </block>
+      <view class='img-box' bindtap='addPic1' wx:if="{{imgbox.length<1}}">
+        <image class='img' src='http://zsb.baike360.cn/public/image/tupian.png'></image>
+      </view>
+    </view>
+  </view>
+    <view class="submit" bindtap="tijiao1">保存</view>
+</view>
+<view class="yhk" wx:if="{{tid==3}}">
+  <view class="list">
+    <view class="left">支付宝昵称</view>
+    <input class="right" placeholder="请输入微信名" value=""></input>
+  </view>
+    <view class="list">
+    <view class="left">绑定手机</view>
+    <input class="right" placeholder="支付宝绑定手机号" value=""></input>
+  </view>
+  <view class="titl_an">上传支付宝收款码</view>
+  <view class='pages'>
+    <!-- 图片 -->
+    <view class="images_box">
+      <block wx:key="imgbox1" wx:for="{{imgbox1}}">
+        <view class='img-box'>
+          <image class='img' src='{{item}}'></image>
+          <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete11'>
+            <image class='img' src='http://zsb.baike360.cn/public/image/dele.png'></image>
+          </view>
+        </view>
+      </block>
+      <view class='img-box' bindtap='addPic11' wx:if="{{imgbox1.length<1}}">
+        <image class='img' src='http://zsb.baike360.cn/public/image/tupian.png'></image>
+      </view>
+    </view>
+  </view>
+    <view class="submit" bindtap="tijiao2">修改</view>
+</view>

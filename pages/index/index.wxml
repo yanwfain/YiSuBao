@@ -1,0 +1,84 @@
+<view class="Shouquan" wx:if="{{!hasUserInfo}}">
+  <view class="titless">
+    提示 ！
+  </view>
+  <view class="cont_tltsops">
+    您还未授权请先授权！
+  </view>
+  <view class="btn_button">
+    <view class="quxiao_btn" bindtap="ggopfn">
+      取消
+    </view>
+    <button class="butn_bottys" open-type="getUserInfo" bindgetuserinfo="getUserInfo">去授权 </button>
+  </view>
+</view>
+<view class="opsbjc" wx:if="{{!hasUserInfo}}" bindtap="ggopfn"></view>
+<view class="opsbjc" wx:if="{{isSiuser}}" bindtap="ggopfns"></view>
+<view class="Shouquan" wx:if="{{isSiuser}}">
+  <view class="titless">
+    提示 ！
+  </view>
+  <view class="cont_tltsops">
+    您的账号未绑定手机号，点击获取
+  </view>
+  <view class="btn_button">
+    <view class="quxiao_btn" bindtap="ggopfns">
+      取消
+    </view>
+    <button class="butn_bottys" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">获取 </button>
+  </view>
+</view>
+<!-- <view class="fied_log" bindtap="openshow">
+  <image src="../../image/kefu.png"></image>
+</view>
+<view class="opsticy" bindtap="falFn" wx:if="{{isshowModel}}"></view>
+<view class="div-tablefu" wx:if="{{isshowModel}}">
+  <view class="bodda" bindtap="open">拨打电话</view>
+  <button class="kefu_btn" open-type='contact' session-from='' style="background: #0582FC">联系客服</button>
+</view> -->
+<view class="logos" style="top:{{statusBarHeight}}px">
+  <image src="../../image/4dc38c706c4eb604fec683001ee3f3f.png"></image>
+  <view class="tit">
+    <view class="titl_1">易速保</view>
+  </view>
+</view>
+<view class="searchBox">
+<!-- <view class="logos" style="top:{{statusBarHeight}}px">
+  <image src="../../image/4dc38c706c4eb604fec683001ee3f3f.png"></image>
+  <view class="tit">
+    <view class="titl_1">易速保</view>
+  </view>
+</view> -->
+  <swiper class='shop_swiper' style="height:{{sHeiss}}px" indicator-dots autoplay="true" indicator-active-color="#fff" interval="3000" duration="1000" circular='true' hidden='{{luboActive}}' class='lbImg'>
+    <block wx:for="{{imageslist}}" wx:key="index">
+      <swiper-item class="imgheight">
+        <image src="{{item}}" bindload="imgHss" class='lbImg' data-id='{{item.id}}' data-id="{{item.id}}" data-activities_id='{{item.activities_id}}' bindtap='goChannel' />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="cont bb" bindtap="qbaoFn">
+  <view class="title">
+    {{list_txt.name1}}
+  </view>
+  <view class="txt_cont">
+    {{list_txt.name1_text}}
+  </view>
+  <view class="pickermoney" wx:if="{{list_txt.name1_price}}">￥{{list_txt.name1_price}}起</view>
+  <view class="bot_txt">{{list_txt.name1_title}}
+    <text class="txt_jt"></text>
+  </view>
+</view>
+<view class="cont bb1" bindtap="thTabop" wx:if="{{list_txt.is_open==2}}">
+  <view class="title">
+    {{list_txt.name2}}
+  </view>
+  <view class="txt_cont">
+    {{list_txt.name2_text}}
+  </view>
+  <view class="pickermoney" wx:if="{{list_txt.name2_price}}">￥{{list_txt.name2_price}}起</view>
+  <view class="bot_txt">{{list_txt.name2_title}}
+    <text class="txt_jt"></text>
+  </view>
+</view>
+<template name="tempkefu"></template>

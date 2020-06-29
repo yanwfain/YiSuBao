@@ -1,0 +1,21 @@
+/* pages/resssgn/index.wxss */
+.img1{
+  width: 500rpx;
+  height: 900rpx;
+  margin: 0 auto;
+
+}
+.img1 image{
+  width: 100%;
+  height: 100%;
+}
+.imgFn{
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;margin:0 auto;
+  margin-top:20rpx;
+  color: white;
+  background: #0582FC;
+  border-radius: 26rpx;
+}

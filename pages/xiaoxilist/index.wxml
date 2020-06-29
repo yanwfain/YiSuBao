@@ -1,0 +1,10 @@
+<block wx:for="{{movieList}}">
+  <view class="talisrt" wx:if="{{item.type_name=='未读'}}" bindtap="dufn" data-id="{{item.id}}">
+    <view class="txt11"><rich-text nodes="{{item.title}}"></rich-text></view>
+    <view class="wei" wx:if="{{item.type_name=='未读'}}">未读</view>
+  </view>
+  <view class="talisrt" wx:if="{{item.type_name=='已读'}}" bindtap="dufn"  data-id="{{item.id}}">
+    <view class="txt11"><rich-text nodes="{{item.title}}"></rich-text></view>
+    <view class="ooy" wx:if="{{item.type_name=='已读'}}">已读</view>
+  </view>
+</block>

@@ -1,0 +1,10 @@
+<image class="img" bindload="imgH" style="width:100%;height:{{sHei}}px" src="http://zsb.baike360.cn/public/image/error.png"></image>
+<view class="fied_log" bindtap="openshow">
+  <image src="../../image/kefu.png"></image>
+  <view style="color:#0582FC"> 客服</view>
+</view>
+<view class="opsticy" bindtap="falFn" wx:if="{{isshowModel}}"></view>
+<view class="div-tablefu" wx:if="{{isshowModel}}">
+  <view class="bodda" bindtap="open">拨打电话</view>
+  <button class="kefu_btn" open-type='contact' session-from='' style="background: #0582FC">联系客服</button>
+</view>

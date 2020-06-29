@@ -1,0 +1,6 @@
+/* pages/cityindex/index.wxss */
+.list{
+  /* width: 100%; */
+  border-bottom: 2rpx solid #ccc;
+  padding: 20rpx;
+}

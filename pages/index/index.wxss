@@ -1,0 +1,256 @@
+
+.kefu_btn{
+  color: white;
+  text-align: center;
+  width: 60%;
+  margin-top:20rpx;
+}
+.fied_log {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.fied_log image {
+  width: 100%;
+  height: 100%;
+}
+.opsticy{
+  position: fixed;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: .7;
+  z-index: 1;
+}
+.div-tablefu{
+  position: fixed;
+  top:30%;
+  left: 10%;
+  width: 80%;
+  background: white;
+  z-index: 2;
+  border-radius: 16rpx;
+  height: 400rpx;
+
+}
+.bodda{
+  width: 60%;
+  padding: 14px 0;
+  color: white;
+  text-align: center;
+  background: #0582FC;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top:100rpx;
+
+
+}
+.Shouquan {
+  position: fixed;
+  top: 30%;
+  z-index: 99;
+  width: 70%;
+  left: 15%;
+  right: 15%;
+  padding: 20rpx 0 0 0;
+  border-radius: 12rpx;
+  background: rgb(248, 248, 248);
+}
+
+.titless {
+  width: 100%;
+  text-align: center;
+  /* line-height: 80rpx; */
+}
+
+.cont_tltsops {
+  width: 90%;
+  text-align: center;
+  height: 120rpx;
+  /* line-height: 120rpx; */
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.btn_button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2rpx solid #ccc;
+}
+
+.quxiao_btn {
+  width: 49%;
+  border-right: 2rpx solid #ccc;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+/* button {
+  padding: 0;
+  margin: 0;
+} */
+
+.butn_bottys {
+  width: 49%;
+  text-align: center;
+  line-height: 100rpx;
+  color: rgb(41, 121, 41);
+  font-size: 30rpx;
+}
+
+/* button {
+  border: none;
+  font-size: 0;
+
+}  */
+
+button::after {
+  border: none;
+} 
+
+.getUser {
+  width: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+  background: rgb(20, 141, 20);
+  color: white;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+}
+
+.opsbjc {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 98;
+  opacity: 0.8;
+  background: black;
+}
+
+.searchBox {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.shop_swiper {
+  width: 100%;
+  /* height: 500rpx; */
+}
+
+.lbImg {
+  width: 100%;
+  height: 100%;
+  /* height: 500rpx; */
+}
+
+.imgheight {
+  /* height: 500rpx; */
+}
+
+.imgheight image {
+  /* height: 500rpx; */
+}
+
+.logos {
+  width: 170rpx;
+  height: 100rpx;
+  position: fixed;
+  left: 20rpx;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logos image {
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 100%;
+}
+
+.titl_1 {
+  font-size: 28rpx;
+  color: white;
+}
+
+.titl_2 {
+  font-size: 24rpx;
+  color: white;
+}
+
+.cont {
+  width: 94%;
+  height: 300rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+}
+
+.title {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 44rpx;
+  font-size: 38rpx;
+  color: #0d87f6;
+}
+
+.txt_cont {
+  font-size: 26rpx;
+  color: #666;
+  width: 66%;
+  margin-left: 5%;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.pickermoney {
+  width: 90%;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #f94a34;
+  margin: 0 auto;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.bot_txt {
+  width: 90%;
+  margin: 0 auto;
+  color: #0d87f6;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.txt_jt {
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #0d87f6;
+  border-right: 1px solid #0d87f6;
+  transform: rotate(45deg);
+}
+
+.bb {
+  background: url('http://zsb.baike360.cn/public/image/cheng.png') no-repeat center;
+  background-size: 100% 100%;
+}
+
+.bb1 {
+  background: url('http://zsb.baike360.cn/public/image/chui.png') no-repeat center;
+  background-size: 100% 100%;
+}

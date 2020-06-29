@@ -1,0 +1,2 @@
+<view class="img1"><image  src="{{img}}"></image></view>
+<view class="imgFn" bindtap="bindimg">保存图片</view>

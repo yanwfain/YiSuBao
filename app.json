@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/kefu/index",
+    "pages/meshen/index",
+    "pages/me/index",
+    "pages/youx/index",
+    "pages/indextwo/index",
+    "pages/shoujih/index",
+    "pages/zjh/index",
+    "pages/tixian/index",
+    "pages/userdelit/index",
+    "pages/ddandelit/index",
+    "pages/yaoqin/index",
+    "pages/kedudelit/index",
+    "pages/yhkdelit/index",
+    "pages/wxdelit/index",
+    "pages/zfbdelit/index",
+    "pages/addyhk/index",
+    "pages/jifen/index",
+    "pages/resssgn/index",
+    "pages/toubao/index",
+    "pages/quanbao/index",
+    "pages/city/index",
+    "pages/cityindex/index",
+    "pages/delitwen/index",
+    "pages/shenqin/index",
+    "pages/qibao/index",
+    "pages/shenqindelit/index",
+    "pages/caichan/index",
+    "pages/wacthdelit/index",
+    "pages/wachtpicker/index",
+    "pages/dapinz/index",
+    "pages/tempkefu/index",
+    "pages/xiaoxilist/index",
+    "pages/xiaoxilistdelit/index",
+    "pages/nono/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#999999",
+    "selectedColor": "#0582FC",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/image/shouye.png",
+        "selectedIconPath": "/image/shouye1.png"
+      },
+      {
+        "pagePath": "pages/meshen/index",
+        "text": "申请",
+        "iconPath": "/image/shenqing.png",
+        "selectedIconPath": "/image/shenqing1.png"
+      },
+      {
+        "pagePath": "pages/kefu/index",
+        "text": "客服",
+        "iconPath": "/image/kf.png",
+        "selectedIconPath": "/image/kf1.png"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "text": "我的",
+        "iconPath": "/image/wode.png",
+        "selectedIconPath": "/image/wode1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

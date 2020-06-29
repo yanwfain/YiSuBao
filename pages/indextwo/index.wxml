@@ -1,0 +1,92 @@
+<!-- <view class="fied_log" bindtap="openshow">
+  <image src="../../image/kefu.png"></image>
+</view> -->
+<view class="opsticy" bindtap="falFn" wx:if="{{isshowModel}}"></view>
+<view class="div-tablefu" wx:if="{{isshowModel}}">
+  <view class="bodda" bindtap="open">拨打电话</view>
+  <button class="kefu_btn" open-type='contact' session-from='' style="background: #0582FC">联系客服</button>
+</view>
+<view class="searchBox">
+  <view class="logos">
+    <image src="../../image/4dc38c706c4eb604fec683001ee3f3f.png"></image>
+    <view class="tit">
+      <view class="titl_1">易速保</view>
+      <!-- <view class="titl_2">yisubao.com</view> -->
+    </view>
+  </view>
+  <view class='shop_swiper'  style="height:{{sHeiss}}px">
+     <image src="{{divpage.image}}" bindload="imgHss" class='lbImg' data-id='{{item.id}}' data-id="{{item.id}}" data-activities_id='{{item.activities_id}}' bindtap='goChannel' />
+  </view> 
+  <!-- <swiper class='shop_swiper' style="height:{{sHeiss}}px" indicator-dots autoplay="true" indicator-active-color="#fff" interval="3000" duration="1000" circular='true' hidden='{{luboActive}}' class='lbImg'>
+    <block wx:for="{{imgaes}}" wx:key="index">
+      <swiper-item class="imgheight">
+        <image src="{{item}}" bindload="imgHss" class='lbImg' data-id='{{item.id}}' data-id="{{item.id}}" data-activities_id='{{item.activities_id}}' bindtap='goChannel' />
+      </swiper-item>
+    </block>
+  </swiper> -->
+  <view class="top_view">
+
+    <view class="title">{{listIarry.jx_suan}}
+      <text style="font-size:26rpx;color:#FA9D02;font-weight:600;">{{divpage.premium}}</text>
+    </view>
+    <view class="bot_view">
+      <view class="left">
+        <text style="color:#0C60FF">{{listIarry.jx_qian}}</text> {{listIarry.jx_danbao}}</view>
+      <input class="right" bindinput="inpFn" type="digit" style="text-align:right" placeholder="请输入{{listIarry.jx_danbao}}" value="{{pickers}}"></input>
+      <text></text>
+    </view>
+    <view class="bot_view" >
+      <view class="tit">{{listIarry.jx_fayuan}}</view>
+      <view class="val_txt" bindtap="actiyFn">
+        {{settitle?settitle:'请选择'}}
+        <text class="txt_jt"></text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="tab">
+  <view class="tab-view {{tabid=='id1'?'active':''}}" id="ops" data-id="id1" bindtap="tabFn">
+    {{listIarry.jx_tab1}}
+  </view>
+  <view class="tab-view {{tabid=='id2'?'active':''}}" data-id="id2" bindtap="tabFn">
+    {{listIarry.jx_tab2}}
+  </view>
+  <view class="tab-view {{tabid=='id3'?'active':''}}" data-id="id3" bindtap="tabFn">
+    {{listIarry.jx_tab3}}
+  </view>
+  <view class="tab-view {{tabid=='id4'?'active':''}}" data-id="id4" bindtap="tabFn">
+    {{listIarry.jx_tab4}}
+  </view>
+</view>
+<scroll-view style="height:1200rpx" scroll-y="true" scroll-into-view="{{toView}}" scroll-with-animation="true" wx:if="{{info}}">
+  <view class="con1" id="id1" >
+    <!-- <view class="tit_con1">保险责任</view> -->
+    
+    <view class="txt"><rich-text nodes="{{info}}"></rich-text></view>
+  </view>
+  <view class="con1" id="id2">
+    <!-- <view class="tit_con1">产品特色</view> -->
+      <view class="txt"><rich-text nodes="{{characteristic}}"></rich-text></view>
+
+  </view>
+  <view class="con1" id="id3">
+    <!-- <view class="tit_con1">投保流程</view> -->
+      <view class="txt"><rich-text nodes="{{flow_path}}"></rich-text></view>
+
+  </view>
+  <view class="con1" id="id4">
+      <view class="txt"><rich-text nodes="{{question}}"></rich-text></view>
+  </view>
+  <view style="height:150rpx;"></view>
+</scroll-view>
+  <view class="txt_toit" wx:if="{{titlop}}">以上由{{titlop}}提供</view>
+   <view style="height:150rpx;"></view>
+<view class="fied"> 
+<view class="imgs" bindtap="openshow">
+  <image src="../../image/kefu.png"></image>
+</view>
+  <view class="left_bot">
+    {{listIarry.jx_bottom1}}:{{botnum}}起
+  </view>
+  <view class="right_bot" bindtap="submit">{{listIarry.jx_bottom2}}</view>
+</view>

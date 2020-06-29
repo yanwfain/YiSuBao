@@ -1,0 +1,89 @@
+/* pages/dapinz/index.wxss */
+.top{
+  padding: 20rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+  background: #F8F8F8;
+
+}
+.pages {
+  width: 98%;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+.top_name {
+  margin-left: 20rpx;
+}
+
+/* 图片 */
+
+.images_box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+}
+
+.img-box {
+  border: 5rpx;
+  /* border-style: solid;
+  border-color: rgba(0, 0, 0, 0.452); */
+  width: 370rpx;
+  height: 260rpx;
+  margin-left: 35rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+/* 删除图片 */
+
+.img-delect {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.jiage {
+  height: 60rpx;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rmb {
+  width: 280rpx;
+  border: 2rpx solid rgb(199, 197, 197);
+}
+
+button {
+  margin-top: 20rpx;
+  background-color: green;
+}
+.submit{
+  width:80%;
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 90rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  margin-top:50rpx;
+  margin-bottom: 100rpx;
+  color: white;
+  background: #0582FC;
+}

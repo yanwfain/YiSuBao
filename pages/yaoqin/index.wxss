@@ -1,0 +1,58 @@
+
+.list {
+  width: 96%;
+  margin: 10rpx auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #FAFAFA;
+  padding: 10rpx 0;
+}
+
+.left_list {
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+.img_1{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  margin-right: 20rpx;
+
+}
+.user_gos{
+  color: black;
+  font-size: 28rpx;
+  width: 200rpx;
+   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.right_list{
+  color: gray;
+  font-size: 28rpx;
+}
+.tab{
+  width: 100%;
+  /* padding: 10rpx 0; */
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid rgb(206, 206, 205);
+
+}
+.tablei{
+  width: 50%;
+  text-align: center;
+  color:black;
+  font-size: 28rpx;
+  padding: 15rpx 0;
+  border-bottom: 2rpx solid white
+}
+.active{
+  color: rgb(255, 230, 0);
+  border-bottom: 4rpx solid rgb(255, 230, 0);
+}

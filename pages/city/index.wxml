@@ -1,0 +1,10 @@
+<view class="citylist" wx:for="{{list}}" wx:key="index">
+  <view class="city_tit">
+    {{item.name}}
+  </view>
+  <!-- <view class="hen_1"></view> -->
+  <view class="city-lisadd">
+    <view bindtap="chantabFn" wx:for="{{item.child}}" wx:for-item="ite" data-id="{{ite.id}}">{{ite.name}}</view>
+    <!-- <view>台北</view> -->
+  </view>
+</view>

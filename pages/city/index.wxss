@@ -1,0 +1,30 @@
+/* pages/city/index.wxss */
+.city_tit {
+  /* width: 150rpx; */
+  /* text-align: center; */
+  font-size: 30rpx;
+  color: #000000;
+  padding: 10rpx;
+  /* padding-bottom: 14rpx; */
+  /* border-bottom: 8rpx solid #DD441C; */
+}
+
+
+.city-lisadd {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20rpx auto;
+}
+
+.city-lisadd view {
+  width: 22%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid gray;
+  margin: 14rpx 1.2%;
+}

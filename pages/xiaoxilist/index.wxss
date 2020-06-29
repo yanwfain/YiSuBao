@@ -1,0 +1,31 @@
+/* pages/xiaoxilist/index.wxss */
+/* pages/memberxiaoxi/index.wxss */
+page{
+  background-color: #f3f3f3;
+
+}
+.talisrt{
+  width: 100%;
+  background: white;
+  margin: 20rpx 0;
+  position: relative;
+  padding: 20rpx 0;
+} 
+.txt11{
+  width: 90%;
+  font-size: 28rpx;
+  color: black;
+  margin: 0 auto;
+}
+.ooy{
+  position: absolute;
+  top:20rpx;
+  right: 20rpx;
+  color:green;
+}
+.wei{
+  position: absolute;
+  top:20rpx;
+  right: 20rpx;
+  color: red;
+}
